@@ -1,0 +1,22 @@
+
+{
+  "short_name": "Transport Tracker",
+  "name": "College Transport Tracker",
+  "description": "A platform for students, parents, and administrators to track college buses in real-time.",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/vite.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2563eb",
+  "background_color": "#1e3a8a"
+}
