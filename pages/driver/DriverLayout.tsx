@@ -33,12 +33,12 @@ const DriverLayout: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen text-gray-900 dark:text-gray-100 flex flex-col items-center p-4">
+        <div className="min-h-screen text-gray-900 dark:text-gray-100 flex flex-col items-center p-3 sm:p-4">
             <div className="w-full max-w-lg">
-                <header className="flex justify-between items-center mb-6">
+                <header className="flex justify-between items-start sm:items-center mb-6 gap-3">
                      <div>
-                        <h1 className="text-2xl font-bold text-primary-700 dark:text-primary-300">Driver Panel</h1>
-                        <p className="text-gray-700 dark:text-gray-300">Welcome, {driver.name}</p>
+                        <h1 className="text-xl sm:text-2xl font-bold text-primary-700 dark:text-primary-300">Driver Panel</h1>
+                        <p className="text-gray-700 dark:text-gray-300 break-words">Welcome, {driver.name}</p>
                     </div>
                      <div className='flex items-center gap-4'>
                         <ThemeToggle />
@@ -92,7 +92,7 @@ const DriverLayout: React.FC = () => {
                     </Card>
                      <Card>
                         <h2 className="text-xl font-bold mb-4">Emergency Alerts</h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                              <button
                                 onClick={() => handleAlert(
                                     'Traffic Delay',

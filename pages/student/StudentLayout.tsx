@@ -117,9 +117,9 @@ const StudentLayout: React.FC = () => {
 
     return (
         <div className="min-h-screen text-gray-900 dark:text-gray-100 flex flex-col">
-            <header className="bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-4 flex justify-between items-center sticky top-0 z-10 border-b border-white/20">
+            <header className="bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-3 sm:p-4 flex justify-between items-center sticky top-0 z-10 border-b border-white/20 gap-3">
                 <div>
-                    <h1 className="text-xl font-bold text-primary-700 dark:text-primary-300">Welcome, {student.name}</h1>
+                    <h1 className="text-base sm:text-xl font-bold text-primary-700 dark:text-primary-300 break-words">Welcome, {student.name}</h1>
                     <p className="text-sm text-gray-700 dark:text-gray-300">Student Dashboard</p>
                 </div>
                 <div className='flex items-center gap-4'>
@@ -130,7 +130,7 @@ const StudentLayout: React.FC = () => {
                 </div>
             </header>
 
-            <main className="flex-grow p-4 mb-16">
+            <main className="flex-grow p-3 sm:p-4 pb-24">
                 {renderContent()}
             </main>
 
@@ -153,11 +153,11 @@ const StudentLayout: React.FC = () => {
 };
 
 const NavItem: React.FC<{icon: React.ReactNode, label: string, active: boolean, onClick: () => void, badge?: string}> = ({icon, label, active, onClick, badge}) => (
-    <button onClick={onClick} className={`flex flex-col items-center justify-center w-24 p-2 rounded-lg transition-colors duration-200 ${active ? 'text-primary-600 dark:text-primary-300 bg-primary-500/20' : 'text-gray-600 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-black/20'}`}>
+    <button onClick={onClick} className={`flex min-w-0 flex-1 flex-col items-center justify-center px-1 py-2 rounded-lg transition-colors duration-200 ${active ? 'text-primary-600 dark:text-primary-300 bg-primary-500/20' : 'text-gray-600 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-black/20'}`}>
         {icon}
-        <span className="text-xs mt-1">{label}</span>
+        <span className="text-[11px] sm:text-xs mt-1 truncate max-w-full">{label}</span>
         {badge && (
-            <span className="mt-1 text-[10px] px-2 py-0.5 rounded-full bg-primary-500/20 text-primary-700 dark:text-primary-200">
+            <span className="mt-1 text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full bg-primary-500/20 text-primary-700 dark:text-primary-200 max-w-full truncate">
                 {badge}
             </span>
         )}
@@ -179,7 +179,7 @@ const StudentDashboard: React.FC<{
     <div className="space-y-6">
         <Card>
             <h2 className="text-2xl font-bold mb-4">Your Bus Status</h2>
-            <div className="grid grid-cols-2 gap-4 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
                 <div>
                     <p className="text-sm text-gray-700 dark:text-gray-300">ETA to Your Stop</p>
                     {isTripActive && eta !== null ? (
@@ -194,7 +194,7 @@ const StudentDashboard: React.FC<{
                 </div>
                 <div>
                     <p className="text-sm text-gray-700 dark:text-gray-300">Your Stop</p>
-                    <p className="text-lg font-semibold">{studentStop?.stop_name}</p>
+                    <p className="text-lg font-semibold break-words">{studentStop?.stop_name}</p>
                 </div>
                 <div>
                     <p className="text-sm text-gray-700 dark:text-gray-300">Bus Number</p>
@@ -218,12 +218,12 @@ const StudentDashboard: React.FC<{
         <Card>
             <h2 className="text-xl font-bold mb-4">Driver Details</h2>
             {driver && (
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 min-w-0">
                     <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                         <UserCircleIcon className="w-10 h-10 text-gray-500" />
                     </div>
-                    <div>
-                        <p className="font-bold text-lg">{driver.name}</p>
+                    <div className="min-w-0">
+                        <p className="font-bold text-lg break-words">{driver.name}</p>
                         <p className="text-gray-700 dark:text-gray-300">{driver.phone}</p>
                     </div>
                 </div>

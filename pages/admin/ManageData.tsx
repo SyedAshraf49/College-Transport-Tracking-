@@ -26,9 +26,9 @@ const ManageData: React.FC = () => {
 
     return (
         <Card>
-            <h1 className="text-3xl font-bold mb-6">Manage Data</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold mb-6">Manage Data</h1>
             <div className="border-b border-white/20 mb-4">
-                <nav className="-mb-px flex space-x-6">
+                <nav className="-mb-px flex gap-2 sm:gap-4 overflow-x-auto pb-1">
                     <TabButton label="Buses" active={activeTab === 'buses'} onClick={() => setActiveTab('buses')} />
                     <TabButton label="Drivers" active={activeTab === 'drivers'} onClick={() => setActiveTab('drivers')} />
                     <TabButton label="Routes" active={activeTab === 'routes'} onClick={() => setActiveTab('routes')} />
@@ -42,7 +42,7 @@ const ManageData: React.FC = () => {
 };
 
 const TabButton: React.FC<{label: string, active: boolean, onClick: () => void}> = ({label, active, onClick}) => (
-    <button onClick={onClick} className={`py-3 px-4 border-b-2 font-medium text-sm transition-colors ${active ? 'border-primary-400 text-primary-500 dark:text-primary-300 bg-white/10 dark:bg-black/10 rounded-t-md' : 'border-transparent text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-300/50'}`}>
+    <button onClick={onClick} className={`py-3 px-3 sm:px-4 border-b-2 font-medium text-sm whitespace-nowrap shrink-0 transition-colors ${active ? 'border-primary-400 text-primary-500 dark:text-primary-300 bg-white/10 dark:bg-black/10 rounded-t-md' : 'border-transparent text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:border-gray-300/50'}`}>
         {label}
     </button>
 );
